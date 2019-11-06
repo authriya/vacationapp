@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section class="search-form">
+        <form class="park-search">
+            <h1>Search for Parks!</h1>
+            <label for="search-state">Which state?</label>
+            <input type="text" name="search-state" id="search-state" required>
+            <label for="max-results">Maximum results per state:</label>
+            <input type="number" name="max-results" id="max-results" value="10">
+            <input type="submit" value="Go!">
+        </form>
+    </section>
+    <section class="results hidden">
+        <h2>Here's a list of parks</h2>
+        <ul class="results-list"></ul>
+    </section>
+    <section class="error">
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</html>
