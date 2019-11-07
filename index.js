@@ -35,6 +35,7 @@ function watchForm() {
         })
         .then(responseJson => displayResults(responseJson, maxResults))
         .catch(err => {
+          $('.error').empty()
             $('.error').append(`Something went wrong: ${err.message}`);
         });
   };
@@ -42,9 +43,12 @@ function watchForm() {
   function displayResults(responseJson, maxResults=10) {
       console.log(responseJson);
       $('.results-list').empty();
-      for (let i=0; i < maxResults; i++) {
+      for (let i=0; i < maxResults & i <responseJson.data.length; i++) {
+        console.log(`${responseJson.data}`);
+        console.log(`${responseJson.data[i]}`)
+        console.log(`${responseJson.data[i].fullName}`)
         $('.results-list').append(
-            `<li><h3>${responseJson.data[i].name}</h3>
+            `<li><h3>${responseJson.data[i].fullName}</h3>
             <p>${responseJson.data[i].description}</p>
             <p> Click <a href="${responseJson.data[i].url}" target="_blank">here</a> to go to the website of the park</p>
             </li>`
