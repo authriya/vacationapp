@@ -20,7 +20,7 @@ function watchForm() {
   function getList(query, maxResults) {
       const params = {
         api_key: apiKey,
-        q: query
+        stateCode: query
       };
       const queryString = formatQueryParams(params);
       const url = searchURL + "?" + queryString;
